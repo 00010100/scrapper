@@ -1,4 +1,4 @@
-import cherio from 'cherio'
+import cheerio from 'cheerio'
 import chalk from 'chalk'
 
 import {taskQueue, p} from '../index'
@@ -7,7 +7,7 @@ import {saveData} from '../handlers'
 const task = async initialData => {
   try {
     const detailContent = await p.getPageContent(initialData.url)
-    const $ = cherio.load(detailContent)
+    const $ = cheerio.load(detailContent)
     const color = $('.description-car .technical-info .car-color').parent().text().trim()
 
     await saveData({

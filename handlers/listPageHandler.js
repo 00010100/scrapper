@@ -1,4 +1,4 @@
-import cherio from 'cherio'
+import cheerio from 'cheerio'
 import chalk from 'chalk'
 
 import {listItemsHandler} from '../handlers'
@@ -8,7 +8,7 @@ export async function listPageHandler(p, url) {
   try {
     console.log(chalk.green('Getting data from: ') + chalk.green.bold(url))
     const pageContent = await p.getPageContent(url)
-    const $ = cherio.load(pageContent)
+    const $ = cheerio.load(pageContent)
     const carsItems = []
 
     $('.ticket-item').each((i, item) => {
