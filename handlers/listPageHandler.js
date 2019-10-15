@@ -1,7 +1,8 @@
 import cherio from 'cherio'
 import chalk from 'chalk'
 
-import {listItemsHandler, saveData} from '../handlers'
+import {listItemsHandler} from '../handlers'
+import {parseData} from '../helpers'
 
 export async function listPageHandler(p, url) {
   try {
@@ -11,12 +12,10 @@ export async function listPageHandler(p, url) {
     const carsItems = []
 
     $('.ticket-item').each((i, item) => {
-      carsItems.push(listItemsHandler($, item))
+      carsItems.push(parseData($, item))
     })
 
-    for (const car of carsItems) {
-      await saveData(car)
-    }
+    await listItemsHandler(carsItems)
   } catch (err) {
     console.log(chalk.red('An error has occured \n'))
     console.log(err)

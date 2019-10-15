@@ -5,7 +5,8 @@ import {arrayFromLength, PuppeteerHandler} from './helpers'
 import {listPageHandler} from './handlers'
 
 const URL = 'https://auto.ria.com/search/?body.id[0]=3&year[0].gte=2014&categories.main.id=1&brand.id[0]=84&model.id[0]=785&price.currency=1&engine.gte=1.8&abroad.not=0&custom.not=1&damage.not=1&spareParts=0&size=100&page='
-const pages = 1
+// const URL = 'https://auto.ria.com/search/?body.id[0]=3&year[0].gte=2014&categories.main.id=1&brand.id[0]=29&model.id[0]=295&price.currency=1&abroad.not=0&custom.not=1&damage.not=1&spareParts=0&size=100&page='
+const pages = 2
 
 const concurrency = 10
 const startTime = new Date()

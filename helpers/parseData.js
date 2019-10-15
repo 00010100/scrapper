@@ -2,7 +2,7 @@ import {slugify} from 'transliteration'
 
 import {formatPrice} from '../helpers'
 
-export function listItemsHandler($, section) {
+export function parseData($, section) {
   const item = $(section).find('.hide')
 
   const id = $(item).data('id')
